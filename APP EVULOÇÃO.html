@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sala de Recuperação</title>
+  <script type="text/javascript" src="./index.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <link rel="icon" href="./placa-de-hospital.png">
+</head>
+
+<body>
+  
+  
+  <div class="main-container">
+    <div class="content">  
+      <h1>Evolução Sala De Recuperação</h1>
+      <hr>
+      <a href="./APP EVULOÇÃO.html"><button id="btnNovoPct">Novo Paciente</button></a><br><br>
+      <form id="infoForm">
+        <label for="hora">Hora de Admissão:</label>
+        <input type="time" id="hora" name="hora"><br><br>
+
+        <label for="nome">Nome do paciente:</label><br>
+        <input type="text" id="nome" name="nome" placeholder="Digite o nome do paciente"><br><br>
+        
+        <label for="procedimento">Procedimento:</label><br>
+        <input list="procedimentoList" id="procedimento" placeholder="Digite ou selecione o procedimento" name="procedimento">
+        <datalist id="procedimentoList">
+            <option value="ABDOMINOPLASTIA">
+            <option value="ABDOMINOPLASTIA COM LIPO">
+            <option value="BRONCOSCOPIA">
+            <option value="BIOPSIA">
+            <option value="COLECISTECTOMIA">
+            <option value="DENERVAÇÃO">
+            <option value="DENERVAÇÃO FACETÁRIA">
+            <option value="EXTENSOS FERIMENTOS">
+            <option value="FRATURA DE COTOVELO DIREITO">
+            <option value="FRATURA DE COTOVELO ESQUERDO">
+            <option value="FRATURA DE PUNHO DIREITO">
+            <option value="FRATURA DE PUNHO ESQUERDO">
+            <option value="GASTROPLASTIA">
+            <option value="HEMORROIDECTOMIA">
+            <option value="HERNIORRAFIA INGUINAL">
+            <option value="HERNIORRAFIA UMBILICAL">
+            <option value="IMPLANTE DE CATETER">
+            <option value="LAPAROSCOPIA">
+            <option value="LIMPEZA CIRÚRGICA">
+            <option value="LIPO">
+            <option value="POSTECTOMIA">
+            <option value="PRÓTESE MAMÁRIA">
+            <option value="MASTOPEXIA">
+            <option value="RETIRADA DE CORPO ESTRANHO">
+            <option value="RETIRADA DE DUPLO J">
+            <option value="RETIRADA DE PRÓTESE">
+            <option value="RINOPLASTIA">
+            <option value="RTU">
+            <option value="SEPTOPLASTIA">
+            <option value="SINOVECTOMIA">
+            <option value="TÚNEL DO CARPO">
+            <option value="URETERO">
+            <option value="VASECTOMIA">
+            <option value="VASECTOMIA UNILATERAL">
+            <option value="VARIZES">
+            <option value="VARIZES BILATERAIS">
+            
+        </datalist><br><br>
+
+        <label for="anestesia">Tipo de Anestesia:</label><br>
+        <input list="anestesiaList" id="anestesia" name="anestesia" placeholder="Digite ou selecione a anestesia">
+        <datalist id="anestesiaList">
+            <option value="BLOQUEIO + LOCAL">
+            <option value="GERAL">
+            <option value="GERAL + LOCAL">
+            <option value="LOCAL">
+            <option value="PERIDURAL">
+            <option value="RAQUIDIANA">
+            <option value="RAQUIDIANA + LOCAL">
+            <option value="RAQUIDIANA + SEDAÇÃO">
+            <option value="SEDAÇÃO">
+            <option value="SEDAÇÃO + BLOQUEIO">
+            <option value="SEDAÇÃO + LOCAL">
+              
+        </datalist><br><br>
+
+        <label for="comorbidades">Comorbidades:</label>
+        <input type="text" id="comorbidades" list="comorbidadesList" name="comorbidades" placeholder="Digite ou selecione a comorbidade">
+        <datalist id="comorbidadesList">
+          <option value="NEGA">
+          <option value="HAS">
+          <option value="ENDOMETRIOSE">
+          <option value="DM">
+          <option value="PRÉ DM">
+          <option value="ASMA">
+          <option value="OBESIDADE">
+          <option value="DOENÇA RENAL">
+          <option value="DOENÇA CARDÍACA">
+          <option value="HIV">
+          <option value="CA">
+        </datalist><br><br>
+
+        <label for="alergias">Alergias:</label><br>
+        <input list="alergiasList" id="alergias" placeholder="Digite ou selecione a alergia" name="alergias">
+        <datalist id="alergiasList">
+            <option value="NEGA">
+            <option value="AAS">
+            <option value="AMENDOIM">
+            <option value="AMOXICILINA">
+            <option value="ASPIRINA">
+            <option value="AZITROMICINA">
+            <option value="BANANA">
+            <option value="BROMOPRIDA">
+            <option value="CAMARÃO">
+            <option value="CEFALEXINA">
+            <option value="CEFADROXILA">
+            <option value="CLARITROMICINA">
+            <option value="CLINDAMICINA">
+            <option value="DICLOFENACO">
+            <option value="DICLOXACILINA">
+            <option value="DIPIRONA">
+            <option value="DOXICICLINA">
+            <option value="ERITROMICINA">
+            <option value="FRUTOS DO MAR">
+            <option value="GLÚTEN">
+            <option value="IBUPROFENO">
+            <option value="LACTOSE">
+            <option value="MEL">
+            <option value="MINOCICLINA">
+            <option value="MORANGO">
+            <option value="NOZES">
+            <option value="OVOS">
+            <option value="PARACETAMOL">
+            <option value="PENICILINA">
+            <option value="PLASIL">
+            <option value="SOJA">
+            <option value="SULFAMETOXAZOL">
+            <option value="TETRACICLINA">
+            <option value="TOMATE">
+            <option value="TRIMETOPRIMA">
+            <option value="VANCOMICINA">
+            
+            
+        </datalist><br><br>
+
+        <label for="acesso">Acesso:</label>
+        <select id="acesso" name="acesso">
+          <option value=""></option>
+          <option value="apresentando AVP em MSE ">Membro Superior Esquerdo (MSE)</option>
+          <option value="apresentando AVP em MSD ">Membro Superior Direito (MSD)</option>
+          <option value="apresentando CATETER EM JUGULAR ESQUERDA ">Cateter em Jugular Esquerda</option>
+          <option value="apresentando CATETER EM JUGULAR DIREITA ">Cateter em Jugular Direita</option>
+        </select><br><br>
+
+        <label for="picc">PICC:</label>
+        <select id="picc" name="picc">
+          <option value=""></option>
+          <option value=" PICC em MSE, ">Membro Superior Esquerdo (MSE)</option>
+          <option value=" PICC em MSD, ">Membro Superior Direito (MSD)</option>
+        </select><br><br>
+
+        <label for="cateterCentral">Cateter Venoso Central:</label>
+        <select id="cateterCentral" name="cateterCentral">
+          <option value=""></option>
+          <option value=" CVC em JUGULAR INTERNA DIREITA, ">CVC JUGULAR DIREITA</option>
+          <option value=" CVC em JUGULAR INTERNA ESQUERDA, ">CVC JUGULAR ESQUERDA</option>
+          <option value=" CVC em SUBCLÁVIA DIREITA, ">CVC SUBCLÁVIA DIREITA</option>
+          <option value=" CVC em SUBCLÁVIA ESQUERDA, ">CVC SUBCLÁVIA ESQUERDA</option>
+          <option value=" CVC em FEMORAL DIREITA, ">CVC FEMORAL DIREITA</option>
+          <option value=" CVC em FEMORAL ESQUERDA, ">CVC FEMORAL ESQUERDA</option>
+        </select><br><br>
+
+        <label for="diurese">Diurese:</label>
+        <select id="diurese" name="diurese">
+          <option value="espontânea">espontânea</option>
+          <option value="por SVD">Sonda Vesical de Demora (SVD)</option>
+          <option value="por SVD com Irrigação">Sonda Vesical de Demora com Irrigação (SVD IRRIGADA)</option>
+        </select><br><br>
+
+        <label for="dreno">Dreno:</label>
+        <select id="dreno" name="dreno">
+          <option value=""></option>
+          <option value="em uso de dreno Portovac, ">PORTOVAC</option>
+          <option value="em uso de dreno Blake, ">BLAKE</option>
+          <option value="em uso de dreno Penrose, ">PENROSE</option>
+        </select><br><br>
+
+        <input id="btnGerarTexto" type="button" value="Gerar Evolução" onclick="gerarTexto()">
+        <input id="btnCopiarTexto" type="button" value="Copiar Evolução" onclick="copiarTexto()">
+
+      </form>
+
+      <h2>Texto Gerado:</h2>
+      <pre id="output"></pre>
+      <button id="editBtn" class="edit-btn" style="display: none;" onclick="editarTexto()">Editar Texto</button>
+      <textarea id="editArea" style="display: none; width: 100%; height: 200px;"></textarea>
+      <button id="saveEditBtn" class="edit-btn" style="display: none;" onclick="salvarTextoEditado()">Salvar Edição</button>
+  </div>
+
+
+</div>
+<div class="history">
+    <h2>Histórico:</h2>
+    <ul id="history"></ul>
+</div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

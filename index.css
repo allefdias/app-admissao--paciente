@@ -1,0 +1,262 @@
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+  margin: 0px;
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 24%, rgba(108,206,226,1) 100%);
+  background-image: url("./rm222batch2-kul-27.jpg");
+  background-size: cover;
+}
+
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="time"] {
+  width: 30%;
+  background: rgb(206, 234, 247);
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: #303030 3px 3px 3px 0px;
+  font-size: 20px;
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 24%, rgba(108,206,226,1) 100%);
+}
+
+pre {
+  background-color: #f7f3eb;
+  padding: 10px;
+  border: 3px solid #4d4d4d;
+  margin-top: 20px;
+  width: 950px;
+  font-size: 17px;
+}
+
+input[type="time"] {
+  width: 7%;
+  font-size: 20px;
+}
+
+select {
+  width: 25%;
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 24%, rgba(108,206,226,1) 100%);
+  box-shadow: #363636 3px 3px 3px 0px;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: "Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  transition: .4s;
+}
+
+select:hover{
+  box-shadow: 0 0 0 .10vw rgb(39, 39, 39);
+}
+
+#dreno {
+  width: 10%;
+}
+
+input {
+  font-family: "Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+  box-shadow: #313131 3px 3px 3px 0px;
+  border-radius: 0.4vw;
+  border: none;
+  outline: none;
+  padding: 5px 20px;
+  max-width: 400px;
+  transition: .4s;
+}
+
+input:hover {
+  box-shadow: 0 0 0 .10vw rgb(39, 39, 39);
+}
+
+input:focus {
+  box-shadow: 0 0 0 .1vw #1e1e20;
+}
+
+#procedimento{
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 24%, rgba(108,206,226,1) 100%);
+}
+
+#anestesia{
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 24%, rgba(108,206,226,1) 100%);
+}
+
+#btnNovoPct {
+  width: 200px;
+  max-width: 300px;
+  background: linear-gradient(90deg, rgb(9, 243, 79) 0%, #19ee3c 100%);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  transition: background 0.3s;
+  box-shadow: #3f3f3f 3px 3px 3px 0px;
+}
+
+#btnNovoPct:hover {
+  color: #1e1e20;
+  background: linear-gradient(90deg, rgb(64, 235, 58) 0%, rgb(2, 255, 86) 100%);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(21,255,0,1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(21,255,0,1);
+  box-shadow: 0px 0px 50px 0px rgba(21,255,0,1);
+
+}
+
+h1 {
+  color: #132e3f;
+  text-align: center;
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+hr{
+  border: 1px solid #2b648a;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 40px;
+}
+#procedimento{
+  width: 30%;
+}
+
+#anestesia{
+  width: 30%;
+}
+
+#btnGerarTexto{
+  width: 200px;
+  max-width: 300px;
+  background-color: #23ac17;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  transition: background 0.3s;
+}
+
+#btnGerarTexto:hover{
+  color: #414141;
+  background-color: #25f012;
+  box-shadow: 0 0 0 .10vw rgb(39, 39, 39);
+  
+}
+
+#btnGerarTexto:focus{
+  color: #414141;
+  background-color: #25f012;
+  box-shadow: 0 0 0 .10vw rgb(39, 39, 39);
+}
+
+#btnCopiarTexto{
+  width: 200px;
+  max-width: 300px;
+  background-color: #23ac17;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  transition: background 0.3s;
+}
+
+#btnCopiarTexto:hover{
+  color: #414141;
+  background-color: #25f012;
+  box-shadow: 0 0 0 .10vw rgb(39, 39, 39);
+}
+
+#btnCopiarTexto:focus{
+  color: #414141;
+  background-color: #25f012;
+  box-shadow: 0 0 0 .10vw rgb(39, 39, 39);
+}
+
+#alergias{
+  width: 30%;
+  background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(249,249,249,1) 24%, rgba(108,206,226,1) 100%);
+}
+
+header {
+  background-color: #f8f8f8;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.main-container {
+  width: 95%;
+  display: flex;
+  height: calc(100vh - 0px); /* altura da tela menos a altura do header */
+}
+
+.content {
+  margin: 0;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  width: 20%;
+}
+
+.history {
+  width: 15%;
+  border-left: 1px solid #ccc;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.history h2 {
+  margin-top: 0;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.history li {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.history li:hover {
+  background-color: #ffffff3b;
+}
+/* Estilos para o botão de deletar */
+.history button {
+  display: flex;
+  align-items: end;
+  background-color: #a7332b; /* Cor de fundo vermelha */
+  color: white; /* Cor do texto branca */
+  border: none; /* Sem borda */
+  padding: 8px 12px; /* Espaçamento interno */
+  cursor: pointer; /* Cursor apontando */
+  margin-left:auto;
+  margin-right: 5px; /* Espaçamento à esquerda */
+  
+}
+
+.history button:hover {
+  background-color: #ff0000; /* Mudança de cor ao passar o mouse */
+}
