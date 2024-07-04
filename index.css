@@ -220,9 +220,11 @@ header {
 
 .history {
   width: 15%;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid #7e86d4;
   padding: 20px;
   overflow-y: auto;
+  background-color: #bcbcbda2;
+  max-height: 890px;
 }
 
 .history h2 {
@@ -236,12 +238,16 @@ header {
 }
 
 .history li {
+  text-transform: uppercase;
+  border: 1px solid #8083a3;
   cursor: pointer;
   padding: 5px 0;
+  background-color: #bcbcbda2;
+  margin-top:  2px;
 }
 
 .history li:hover {
-  background-color: #ffffff3b;
+  background-color: #8a84843b;
 }
 /* Estilos para o botão de deletar */
 .history button {
@@ -254,9 +260,14 @@ header {
   cursor: pointer; /* Cursor apontando */
   margin-left:auto;
   margin-right: 5px; /* Espaçamento à esquerda */
+  border-radius: 10%;
   
 }
 
 .history button:hover {
   background-color: #ff0000; /* Mudança de cor ao passar o mouse */
+}
+.history h2{
+  text-transform: uppercase;
+  text-align: center;
 }
