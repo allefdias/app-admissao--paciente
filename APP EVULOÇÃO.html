@@ -68,7 +68,9 @@
         <label for="anestesia">Tipo de Anestesia:</label><br>
         <input list="anestesiaList" id="anestesia" name="anestesia" placeholder="Digite ou selecione a anestesia">
         <datalist id="anestesiaList">
+            <option value="BLOQUEIO">
             <option value="BLOQUEIO + LOCAL">
+            <option value="BLOQUEIO + GERAL">
             <option value="GERAL">
             <option value="GERAL + LOCAL">
             <option value="LOCAL">
@@ -198,11 +200,15 @@
 
 </div>
 <div class="history">
-    <h2>Histórico</h2>
-    <div>
-      <button id="btnHistoricoPassado" onclick="alternarHistorico()">Histórico Passado</button>
-    </div>
-    <ul id="history"></ul>
+  <h2>Histórico</h2>
+  <hr>
+  <div>
+    <input type="text" id="inputPesquisaNome" placeholder="Pesquise pelo nome">
+    <button onclick="pesquisarHistoricoPorNome()">Pesquisar</button>
+    <hr>
+  </div>
+  <button id="btnAlternarHistorico" onclick="alternarHistorico()">Mostrar Histórico</button>
+  <ul id="history"></ul>
 </div>
 
   <script src="script.js"></script>

@@ -223,7 +223,7 @@ header {
   border-left: 1px solid #7e86d4;
   padding: 20px;
   overflow-y: auto;
-  background-color: #bcbcbda2;
+  background-color: #ffffffc9;
   max-height: 890px;
 }
 
@@ -239,28 +239,29 @@ header {
 
 .history li {
   text-transform: uppercase;
-  border: 1px solid #8083a3;
+  border: 1px solid #7e86d4;
   cursor: pointer;
   padding: 5px 0;
-  background-color: #bcbcbda2;
+  background-color: #e7e9e9a6;
   margin-top:  2px;
 }
 
 .history li:hover {
-  background-color: #8a84843b;
+  background-color: #79e4ff94;
 }
 /* Estilos para o botão de deletar */
 .history button {
   display: flex;
-  align-items: end;
+  align-items:center;
   background-color: #a7332b; /* Cor de fundo vermelha */
   color: white; /* Cor do texto branca */
-  border: none; /* Sem borda */
+  border: 1px solid #000000; /* Sem borda */
   padding: 8px 12px; /* Espaçamento interno */
   cursor: pointer; /* Cursor apontando */
   margin-left:auto;
   margin-right: 5px; /* Espaçamento à esquerda */
-  border-radius: 10%;
+  margin-bottom: 20px;
+  border-radius: 5%;
   
 }
 
@@ -270,4 +271,8 @@ header {
 .history h2{
   text-transform: uppercase;
   text-align: center;
+}
+#inputPesquisaNome{
+  width: 82%;
+  margin-bottom: 10px;
 }
