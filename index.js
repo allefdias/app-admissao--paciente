@@ -58,21 +58,28 @@ function copiarTexto() {
             alert('Texto copiado para a área de transferência!');
         })
         .catch(err => {
-            alert('Erro ao copiar texto: ', err);
+            alert('Erro ao copiar texto: ' + err);
         });
 }
 
 function salvarNoHistorico(nome, texto) {
     const hoje = new Date().toLocaleDateString();
     let historico = JSON.parse(localStorage.getItem('historico')) || [];
+    let historicoAntigo = JSON.parse(localStorage.getItem('historicoAntigo')) || [];
+    const ultimaData = localStorage.getItem('ultimaData') || hoje;
+
+    // Verifica se é um novo dia e move o histórico para o histórico antigo
+    if (ultimaData !== hoje) {
+        historico.forEach(item => {
+            historicoAntigo.push(item);
+        });
+        historico = [];
+        localStorage.setItem('historicoAntigo', JSON.stringify(historicoAntigo));
+    }
+
     historico.unshift({ nome, texto, data: hoje });
     localStorage.setItem('historico', JSON.stringify(historico));
-
-    // Adiciona ao histórico antigo se mudou de dia
-    if (hoje !== historico[0].data) {
-        salvarHistoricoAntigo(historico, hoje);
-        localStorage.setItem('historico', JSON.stringify([])); // Limpa o histórico do dia atual
-    }
+    localStorage.setItem('ultimaData', hoje);
 }
 
 function exibirHistorico() {
@@ -122,27 +129,27 @@ function exibirHistoricoPassado(historyList, historicoAntigo) {
 }
 
 function deletarTexto(index) {
-    let historico = JSON.parse(localStorage.getItem('historico')) || [];
-    historico.splice(index, 1);
-    localStorage.setItem('historico', JSON.stringify(historico));
-    exibirHistorico();
-}
-
-function salvarHistoricoAntigo(historico, data) {
-    let historicoAntigo = JSON.parse(localStorage.getItem('historicoAntigo')) || [];
-    historico.forEach(item => {
-        if (item.data === data) {
-            historicoAntigo.push(item);
-        }
-    });
-    localStorage.setItem('historicoAntigo', JSON.stringify(historicoAntigo));
+    const senha = prompt('Por favor, digite a senha para confirmar a exclusão:');
+    if (senha === 'deletar123') {
+        let historico = JSON.parse(localStorage.getItem('historico')) || [];
+        historico.splice(index, 1);
+        localStorage.setItem('historico', JSON.stringify(historico));
+        exibirHistorico();
+    } else {
+        alert('Senha incorreta. Exclusão cancelada.');
+    }
 }
 
 function deletarHistoricoAntigo(index) {
-    let historicoAntigo = JSON.parse(localStorage.getItem('historicoAntigo')) || [];
-    historicoAntigo.splice(index, 1);
-    localStorage.setItem('historicoAntigo', JSON.stringify(historicoAntigo));
-    exibirHistorico();
+    const senha = prompt('Por favor, digite a senha para confirmar a exclusão:');
+    if (senha === 'deletar123') {
+        let historicoAntigo = JSON.parse(localStorage.getItem('historicoAntigo')) || [];
+        historicoAntigo.splice(index, 1);
+        localStorage.setItem('historicoAntigo', JSON.stringify(historicoAntigo));
+        exibirHistorico();
+    } else {
+        alert('Senha incorreta. Exclusão cancelada.');
+    }
 }
 
 function editarTexto() {
@@ -186,30 +193,47 @@ function exibirHistoricoPorData(data) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    verificarData();
     exibirHistorico();
 });
 
-function pesquisarHistoricoPorNome() {
-    const inputPesquisa = document.getElementById('inputPesquisaNome');
-    const nomePesquisado = inputPesquisa.value.trim().toLowerCase();
+function verificarData() {
+    const hoje = new Date().toLocaleDateString();
+    const ultimaData = localStorage.getItem('ultimaData');
 
+    if (ultimaData !== hoje) {
+        let historico = JSON.parse(localStorage.getItem('historico')) || [];
+        let historicoAntigo = JSON.parse(localStorage.getItem('historicoAntigo')) || [];
+
+        historico.forEach(item => {
+            historicoAntigo.push(item);
+        });
+
+        localStorage.setItem('historicoAntigo', JSON.stringify(historicoAntigo));
+        localStorage.setItem('historico', JSON.stringify([])); // Limpa o histórico atual
+        localStorage.setItem('ultimaData', hoje);
+    }
+}
+
+function pesquisarHistorico() {
+    const termoPesquisado = document.getElementById('inputPesquisaNome').value.toLowerCase();
     const historyList = document.getElementById('history');
-    historyList.innerHTML = ''; // Limpa a lista antes de exibir
+    historyList.innerHTML = '';
 
     let historico = JSON.parse(localStorage.getItem('historico')) || [];
     let historicoAntigo = JSON.parse(localStorage.getItem('historicoAntigo')) || [];
     let resultados = [];
 
-    // Busca no histórico atual
+    // Busca no histórico atual por nome ou data
     historico.forEach(item => {
-        if (item.nome.toLowerCase().includes(nomePesquisado)) {
+        if (item.nome.toLowerCase().includes(termoPesquisado) || item.data.includes(termoPesquisado)) {
             resultados.push(item);
         }
     });
 
-    // Busca no histórico antigo
+    // Busca no histórico antigo por nome ou data
     historicoAntigo.forEach(item => {
-        if (item.nome.toLowerCase().includes(nomePesquisado)) {
+        if (item.nome.toLowerCase().includes(termoPesquisado) || item.data.includes(termoPesquisado)) {
             resultados.push(item);
         }
     });
@@ -217,7 +241,7 @@ function pesquisarHistoricoPorNome() {
     // Exibe os resultados encontrados
     resultados.forEach((item, index) => {
         let listItem = document.createElement('li');
-        listItem.innerHTML = `${index + 1}: ${item.nome} <button class="delete-button" onclick="deletarHistorico(${index})">Deletar</button>`;
+        listItem.innerHTML = `${index + 1}: ${item.nome} (${item.data}) <button class="delete-button" onclick="deletarTexto(${index})">Deletar</button>`;
         listItem.onclick = () => {
             const output = document.getElementById('output');
             output.textContent = item.texto;
@@ -227,5 +251,5 @@ function pesquisarHistoricoPorNome() {
     });
 
     // Limpa o campo de pesquisa
-    inputPesquisa.value = '';
+    document.getElementById('inputPesquisaNome').value = '';
 }

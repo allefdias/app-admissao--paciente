@@ -59,7 +59,7 @@ select:hover{
 }
 
 #dreno {
-  width: 10%;
+  width: 20%;
 }
 
 input {
@@ -275,4 +275,11 @@ header {
 #inputPesquisaNome{
   width: 82%;
   margin-bottom: 10px;
+}
+
+#inputPesquisaNome::-webkit-input-placeholder{
+  font-size: 15px;
+}
+.history button:active{
+  background-color: #00ff37;
 }
